@@ -1,0 +1,164 @@
+	.content {
+		/* width: 87.2%; */
+		position: relative;
+		height: auto;
+		/* padding-bottom: 40rpx; */
+		/* overflow: hidden; */
+	}
+	.search image{
+		/* padding-left: 50rpx; */
+		width: 120rpx;
+		height: 56rpx;
+	}
+	.gudingOne{
+		width: 100%;
+		position: fixed;
+		top: 0;
+		z-index: 1000;
+		background-color: rgba(255, 255, 255,1);
+	}
+	.search {
+		width: 87.2%;
+		display: flex;
+		margin: auto;
+		justify-content: space-between;
+		top: 0;
+		
+		padding-top: 20rpx;
+	}
+	.search .rigth_img{
+		width: 56rpx;
+		height: 56rpx;
+	}
+	.listags{
+		width: 100%;
+		height: auto;
+		display: flex;
+		margin-top: 40rpx;
+	}
+	
+	.listags_wen{
+		width: 160rpx;
+		height: 36rpx;
+		font-size: 26rpx;
+		font-family: PingFangSC-Medium-, PingFangSC-Medium;
+		font-weight: normal;
+		color: #9B9DA9;
+		line-height: 36rpx;
+	}
+	.listBlock{
+		font-size: 34rpx;
+		color: #040B29;
+	}
+	.title{
+		width: 180rpx;
+		height: 56rpx;
+		font-size: 34rpx;
+		font-family: PingFangSC-Regular, PingFang SC;
+		font-weight: 400;
+		color: #040B29;
+		line-height: 56rpx;
+		text-align: center;
+	}
+	.title_text{
+		margin-left: 20rpx;
+		font-size: 26rpx;
+		font-family: PingFangSC-Regular-, PingFangSC-Regular;
+		font-weight: normal;
+		color: #D24740;
+	}
+	.rigth_title{
+		width: 180rpx;
+		height: 42rpx;
+		font-size: 30rpx;
+		font-family: PingFangSC-Medium, PingFang SC;
+		font-weight: 500;
+		color: #52BCBC;
+		line-height: 42rpx;
+		text-align: right;
+	}
+	.lecturer{
+		width: 100%;
+		height: 750rpx;
+		top: 40rpx;
+	}
+	.lecturer_imgone{
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.lecturer_imgtwo {
+		width: 100rpx;
+		height: 100rpx;
+		position: absolute;
+		z-index: 2;
+		right: 0;
+		top: 28rpx;
+	}
+	.lecturer_text{
+		width: auto;
+		height: auto;
+		position: absolute;
+		z-index: 2;
+		top: 70rpx;
+		left: 0;
+		writing-mode:vertical-lr;
+	}
+	.lecturer_details{
+		/* width: 100%; */
+		height: auto;
+		padding-top: 50rpx;
+		position: relative;
+		/* padding: 60rpx 50rpx; */
+		box-sizing: border-box;
+		opacity: 0.9;
+		z-index: 3;
+		font-family: PingFangSC-Medium-, PingFangSC-Medium;
+		font-weight: normal;
+		overflow: hidden;
+		padding-bottom: 200rpx;
+	}
+	.lecturer_name{
+		width: 100%;
+		margin-bottom: 30rpx;
+		width: 87.2%;
+	    margin: auto;
+		padding-bottom: 40rpx;
+		border-bottom: 1rpx solid rgb(213, 213, 213);
+		margin-bottom: 60rpx;
+	}
+	.lecturer_title{
+		font-size: 30rpx;
+		width: 87.2%;
+		margin-left: 48rpx;
+		padding-bottom: 34rpx;
+	}
+	.moreTitle{
+		margin-bottom: 30rpx;
+	}
+	.lecturer_jian{
+		    font-size: 13px;
+		    width: 87.2%;
+		    height: auto;
+		    margin: auto;
+		    overflow: hidden;
+	}
+	.popu_userRigth{
+		width: auto;
+		height: 62rpx;
+		display: flex;
+	}
+	.popu_userRigth image{ 
+		width: 48rpx;
+		height: 62rpx;
+	}
+	.popu_user_num{
+		width: auto;
+		height: 78rpx;
+		font-size: 26rpx;
+		font-family: PingFangSC-Medium-, PingFangSC-Medium;
+		font-weight: normal;
+		color: #fff;
+		line-height: 78rpx;
+	}

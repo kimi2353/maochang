@@ -1,0 +1,123 @@
+.search image{
+		width: 120rpx;
+		height: 56rpx;
+	}
+	.gudingOne{
+		width: 100%;
+		position: fixed;
+		top: 0;
+		z-index: 1000;
+	}
+	.search {
+		width: 87.2%;
+		display: flex;
+		margin: auto;
+		justify-content: space-between;
+		top: 0;
+		background-color: rgba(255, 255, 255, 1);
+		padding-top: 20rpx;
+	}
+	.search .rigth_img{
+		width: 56rpx;
+		height: 56rpx;
+	}
+	.title{
+		width: 180rpx;
+		height: 56rpx;
+		font-size: 38rpx;
+		font-family: PingFangSC-Regular, PingFang SC;
+		font-weight: 600;
+		color: #040B29;
+		line-height: 56rpx;
+		text-align: center;
+	}
+	.rigth_title{
+		width: 180rpx;
+		height: 42rpx;
+		font-size: 30rpx;
+		font-family: PingFangSC-Medium, PingFang SC;
+		font-weight: 500;
+		color: #52BCBC;
+		line-height: 42rpx;
+		text-align: right;
+	}
+	.video{
+		width: 100%;
+		height: auto;
+		display: flex;
+		margin-top: 40rpx;
+		justify-content: space-between;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #F7F7F7;
+	}
+	.video image{
+		width: 206rpx;
+		height: 206rpx;
+	}
+	.video_text{
+		width: 68%;
+		height: 206rpx;
+		box-sizing: border-box;
+		padding: 0 0 0 30rpx;
+	}
+	.video_title{
+		width: 100%;
+		height: 80rpx;
+		font-size: 33rpx;
+		font-family: PingFangSC-Medium-, PingFangSC-Medium;
+		font-weight: normal;
+		color: #040B29;
+		line-height: 60rpx;
+	}
+	.video_people{
+		width: 100%;
+		height: 60rpx;
+		overflow: hidden;
+		font-size: 24rpx;
+		font-family: PingFangSC-Regular-, PingFangSC-Regular;
+		font-weight: normal;
+		color: #9B9DA9;
+	}
+	
+	
+	.excellent_img{
+		width: auto;
+		height: auto;
+		position: relative;
+	
+	}
+	.excellent_img .images_one{
+		width: 200rpx;
+		height: 200rpx;
+		/* position: absolute; */
+		z-index: 1;
+		top: 0;
+		left: 0;
+	}
+	.excellent_img .images_two{
+		width: 42rpx;
+		height: 22rpx;
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: -8rpx;
+	}
+	.textTop{
+		width: 100%;
+		height: auto;
+		display: flex;
+		margin-top: 60rpx;
+		margin-bottom: 40rpx;
+	}
+	.textTop .add{
+		font-size: 34rpx;
+	}
+	.textTop view{
+		width: 120rpx;
+		height: 48rpx;
+		font-size: 26rpx;
+		font-family: PingFangSC-Medium-, PingFangSC-Medium;
+		font-weight: normal;
+		color: #040B29;
+		line-height: 48rpx;
+	}

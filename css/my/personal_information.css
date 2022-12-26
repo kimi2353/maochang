@@ -1,0 +1,101 @@
+.message {
+    margin-top: 40rpx;
+    font-size: 34rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.message_user {
+    margin-top: 65rpx;
+    font-size: 34rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user_css {
+    display: flex;
+    align-items: center;
+}
+
+.userImg {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+
+.user_right {
+    margin-right: 10rpx;
+    font-size: 30rpx;
+    color: #999;
+}
+
+.name {
+    background-color: #fff;
+    border-radius: 20rpx;
+    width: 600rpx;
+    height: 295rpx;
+    position: relative;
+}
+
+.name_title {
+    padding-top: 30rpx;
+    font-size: 35rpx;
+    text-align: center;
+}
+
+.name_input {
+    margin-top: 20rpx;
+    height: 70rpx;
+    font-size: 33rpx;
+    padding: 0 50rpx;
+}
+
+.name_num {
+    top: 115rpx;
+    color: #999;
+    position: absolute;
+    right: 40rpx;
+    font-size: 28rpx;
+}
+
+.name_bottom {
+    margin-top: 30rpx;
+    display: flex;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-top: 1rpx solid rgb(223, 223, 223);
+}
+
+.new_autograph {
+    background-color: #fff;
+    border-radius: 20rpx;
+    width: 600rpx;
+    height: 335rpx;
+    position: relative;
+}
+
+.Autograph_input {
+    margin-top: 20rpx;
+    width: 500rpx;
+    height: 90rpx;
+    font-size: 33rpx;
+    padding: 0 50rpx;
+}
+
+.Autograph_num {
+    top: 180rpx;
+    color: #999;
+    position: absolute;
+    right: 40rpx;
+    font-size: 28rpx;
+}
+
+.Autograph_bottom {
+    margin-top: 50rpx;
+    display: flex;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-top: 1rpx solid rgb(223, 223, 223);
+}

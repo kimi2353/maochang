@@ -1,0 +1,83 @@
+.content {
+  padding: 50rpx 50rpx;
+}
+
+.to_my {
+  margin-top: 45rpx;
+  width: 150rpx;
+  height: 70rpx;
+}
+
+.title {
+  font-size: 60rpx;
+  margin: 20rpx 20rpx 30rpx 20rpx;
+}
+
+.my_features {
+  padding: 0 10rpx;
+  height: 120rpx;
+  line-height: 130rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.jump_image {
+  display: flex;
+  align-items: center;
+}
+
+.jump {
+  width: 55rpx;
+  height: 55rpx;
+}
+
+.grey {
+  color: rgb(151, 151, 151);
+}
+
+.tips {
+  background-color: #fff;
+  border-radius: 20rpx;
+  width: 500rpx;
+  height: 250rpx;
+}
+
+.popTitle {
+  font-size: 40rpx;
+  text-align: center;
+  height: 150rpx;
+  line-height: 150rpx;
+}
+
+.popBottom {
+  display: flex;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: 1rpx solid rgb(223, 223, 223);
+}
+
+.pop_cancel {
+  color: rgb(83, 83, 83);
+  text-align: center;
+  width: 50%;
+  border-right: 1rpx solid rgb(223, 223, 223);
+}
+
+.pop_out {
+  color: rgb(79, 201, 86);
+  width: 50%;
+  text-align: center;
+}
+
+.introduce {
+  margin-top: 80rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: rgb(37, 37, 37);
+}
+
+.introduction {
+  margin-top: 70rpx;
+  font-size: 28rpx;
+  color: #999;
+}

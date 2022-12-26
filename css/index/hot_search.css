@@ -1,0 +1,51 @@
+.title{
+	width: 100%;
+	height: auto;
+	font-size: 60rpx;
+	font-family: PingFangSC-Medium, PingFang SC;
+	font-weight: 500;
+	color: #040B29;
+	line-height: 84rpx;
+}
+.content{
+	width: 100%;
+	height: auto;
+	margin-top: 20rpx;
+	border-bottom: 1px solid #F7F7F7;
+	padding-bottom: 40rpx;
+}
+.hot_title{
+	display: flex;
+	
+}
+.title_img{
+	width: 30rpx;
+	height: 30rpx;
+	margin-top: 4rpx;
+}
+.hot_img{
+	width: 54rpx;
+	height: 42rpx;
+	margin-left: 4rpx;
+}
+.title_text{
+	width: auto;
+	height: 42rpx;
+	font-size: 30rpx;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: #040B29;
+	line-height: 42rpx;
+	margin-left: 6rpx;
+}
+.hot_number{
+	width: auto;
+	height: auto;
+	font-size: 24rpx;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: #9B9DA9;
+	line-height: 34rpx;
+	margin-left: 36rpx;
+	margin-top: 10rpx;
+}

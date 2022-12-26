@@ -1,0 +1,64 @@
+.list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50rpx;
+}
+
+.list_img {
+    display: flex;
+}
+
+.list_text {
+    margin-left: 40rpx;
+    margin-top: 10rpx;
+    display: flex;
+    align-items: center;
+}
+
+.list_photo {
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 50%;
+}
+
+.list_follow {
+    padding: 10rpx 30rpx;
+    border: 1px solid rgb(19, 234, 130);
+    border-radius: 40rpx;
+    color: rgb(19, 234, 130);
+}
+
+.list_name {
+    font-size: 38rpx;
+    margin-bottom: 20rpx;
+}
+
+.list_autograph {
+    font-size: 30rpx;
+    color: #999;
+}
+
+.missing_data {
+    text-align: center;
+    margin-top: 100rpx;
+    color: #999;
+}
+
+.no_moudel {
+    display: flex;
+    justify-content: center;
+    margin-top: 55%;
+}
+
+.no_data {
+    width: 350rpx;
+    height: 350rpx;
+}
+
+.no_data_text {
+    margin-top: 30rpx;
+    color: #999;
+    font-size: 37rpx;
+    text-align: center;
+}

@@ -1,0 +1,97 @@
+.top {
+  padding-top: 45rpx;
+  background-image: url(@/static/img/myBackground.png);
+  background-size: 100% 100%;
+  height: 700rpx;
+  position: relative;
+}
+
+.set_up_image {
+  display: flex;
+  justify-content: space-between;
+}
+
+.station {
+  width: 82%;
+}
+
+.mySetUp {
+  margin: 50rpx 0 0 0;
+  width: 64rpx;
+  height: 64rpx;
+  padding: 0 40rpx;
+}
+
+.userMsg {
+  padding: 0 40rpx;
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.greet {
+  font-size: 60rpx;
+}
+
+.personality {
+  margin-top: 60rpx;
+}
+
+.days {
+  margin-top: 20rpx;
+}
+
+.head_portrait {
+  display: block;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+}
+
+.Sign_in {
+  margin-top: 30rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1px solid black;
+  border-radius: 40rpx;
+}
+
+.top_bottom {
+  position: absolute;
+  width: 100%;
+  bottom: 5%;
+}
+
+.dynamicQuantity {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 90rpx;
+}
+
+.dynamic_n {
+  text-align: center;
+  width: 25%;
+}
+
+.dynamic_content {
+  margin-top: 12rpx;
+}
+
+.my_features {
+  padding: 0 50rpx;
+  height: 130rpx;
+  line-height: 130rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.jump_image {
+  display: flex;
+  align-items: center;
+}
+
+.jump {
+  width: 55rpx;
+  height: 55rpx;
+}

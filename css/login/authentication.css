@@ -1,0 +1,72 @@
+.login_img {
+    width: 132rpx;
+    height: 132rpx;
+    margin-top: 314rpx;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.back {
+    padding: 0 100rpx;
+    margin-top: 66rpx;
+    font-size: 40rpx;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #040b29;
+    line-height: 56rpx;
+}
+
+.login_submit {
+    margin-top: 30rpx;
+}
+
+.submit_titile {
+    font-size: 36rpx;
+    margin: 0 15rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit_input {
+    font-size: 32rpx;
+    height: 34rpx;
+    line-height: 34rpx;
+    border: 1rpx solid #999;
+    padding: 12rpx 30rpx;
+    border-radius: 12rpx;
+}
+
+.submit_button {
+    margin-top: 60rpx;
+    background: rgb(251, 170, 20);
+}
+
+.authentication {
+    margin-top: 30rpx;
+    display: flex;
+    font-size: 30rpx;
+    color: rgb(251, 170, 20);
+    justify-content: space-between;
+}
+
+.authentication_name {
+    text-align: center;
+}
+
+.registe_img {
+    width: 132rpx;
+    height: 132rpx;
+    margin-top: 280rpx;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.code {
+    font-size: 30rpx;
+    color: rgb(255, 113, 25);
+}
+
+.hasBeenSent {
+    font-size: 30rpx;
+    color: #999;
+}
