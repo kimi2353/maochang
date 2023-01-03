@@ -65,6 +65,7 @@
               :key="jr + 'img'"
             >
               <image
+                v-if="index != '' && index.indexOf('cmbbs') >= 0"
                 :class="ArtMyimg(jr, i.images)"
                 :src="index"
                 mode=""

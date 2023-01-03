@@ -331,7 +331,6 @@
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8",
-
     "app-plus": {
       "titleNView": false
     }
@@ -352,12 +351,12 @@
         "selectedIconPath": "static/img/example.png",
         "text": "榜样"
       },
-      {
-        "pagePath": "pages/suprise/index",
-        "iconPath": "static/img/supriseNo.png",
-        "selectedIconPath": "static/img/suprise.png",
-        "text": "惊喜"
-      },
+      // {
+      //   "pagePath": "pages/suprise/index",
+      //   "iconPath": "static/img/supriseNo.png",
+      //   "selectedIconPath": "static/img/suprise.png",
+      //   "text": "惊喜"
+      // },
       {
         "pagePath": "pages/my/index",
         "iconPath": "static/img/myNo.png",

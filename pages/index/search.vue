@@ -26,11 +26,11 @@
 			<!-- 热门话题 -->
 			<div class="old_search">热门话题 <image @click="hotTop" src="../../static/img/xiayibu.png" mode=""></image></div>
 			<div class="topic">
-				<div class="conversation" v-for="(item,index) in hot_topic" :key="item.id">
+				<div class="conversation" v-for="(item,index) in hot_topic" :key="item.id" @click="tohottopFn(item.id, item.title)">
 					<div class="left_conversation">
 						<image class="conversation_image" src="../../static/img/search.png" mode=""></image>
 						<div class="conversation_text">{{item.title}}</div>
-						<image v-if="index == 1|| index == 2 || index == 0" class="hot_image" src="../../static/img/hot.png" mode=""></image>
+						<image v-if="index <= 2" class="hot_image" src="../../static/img/hot.png" mode=""></image>
 					</div>
 					<div class="topic_text">{{item.hot}}人</div>
 				</div>
@@ -95,10 +95,9 @@
 		onLoad() {
 			console.log(uni.getStorageSync("old_search"),);
 			if(uni.getStorageSync("old_search") == ''){
-				console.log("121212121");
 				uni.setStorageSync('old_search',[]);
 				this.old_search = []
-			}else{
+			} else {
 				this.old_search = uni.getStorageSync("old_search")
 			}
 			this.getXilieList()
@@ -106,7 +105,6 @@
 		},
 		//下拉刷新
 		onPullDownRefresh(){
-			
 			uni.stopPullDownRefresh()
 		},
 		methods:{
@@ -127,7 +125,16 @@
 					limit:"10"
 				}, 'POST').then(res => {
 					console.log(res,'热门话题获取成功')
-					this.hot_topic = res.data.data.list
+					this.hot_topic = res.data.data.list.sort((a, b) => {
+            let a1 = a.hot;
+            let a2 = b.hot;
+            if (a1 > a2) {
+              return -1;
+            } else {
+              return 1;
+            }
+          })
+          console.log(this.hot_topic)
 				}).catch(err => {
 					console.log(err,'err')
 				})
@@ -165,8 +172,14 @@
 				uni.navigateTo({
 					url:"./hot_topic"
 				})
-			}
-			
+			},
+			tohottopFn(id, tit) {
+        // console.log(id, tit)
+        uni.switchTab({
+          url: "/pages/index/index",
+        })
+        console.log(id, tit)
+      }
 		}
 	}
 </script>

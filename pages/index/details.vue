@@ -54,10 +54,10 @@
 				
 				<!-- 图片数量不一样，样式不一样 -->
 				<div class="user_content_Img" v-if="userInfoArr.images.length >= 4">
-					<image class="img_one" :src="userInfoArr.images[0]" mode="aspectFill" @click="pictureMain(userInfoArr.images)"></image>
-					<image class="img_one" :src="userInfoArr.images[1]" mode="aspectFill" @click="pictureMain(userInfoArr.images)"></image>
-					<image class="img_one" :src="userInfoArr.images[2]" mode="aspectFill" @click="pictureMain(userInfoArr.images)"></image>
-					<image class="img_one" :src="userInfoArr.images[3]" mode="aspectFill" @click="pictureMain(userInfoArr.images)">
+					<image class="img_one" :src="userInfoArr.images[0]" mode="aspectFill" @click="pictureMain(userInfoArr.images, 0)"></image>
+					<image class="img_one" :src="userInfoArr.images[1]" mode="aspectFill" @click="pictureMain(userInfoArr.images, 1)"></image>
+					<image class="img_one" :src="userInfoArr.images[2]" mode="aspectFill" @click="pictureMain(userInfoArr.images, 2)"></image>
+					<image class="img_one" :src="userInfoArr.images[3]" mode="aspectFill" @click="pictureMain(userInfoArr.images, 3)">
 						
 					</image>
 					<view class="imgNumber">
@@ -66,21 +66,21 @@
 					
 				</div>
 				<div class="user_content_Img " v-if="userInfoArr.images.length == 3">
-					<image class="img_one" :src="userInfoArr.images[0]" mode="aspectFill" @click="pictureMain(userInfoArr.images)"></image>
-					<image class="img_one" :src="userInfoArr.images[1]" mode="aspectFill" @click="pictureMain(userInfoArr.images)"></image>
-					<image class="img_one img_two" :src="userInfoArr.images[2]" mode="aspectFill" @click="pictureMain(userInfoArr.images)">
+					<image class="img_one" :src="userInfoArr.images[0]" mode="aspectFill" @click="pictureMain(userInfoArr.images, 0)"></image>
+					<image class="img_one" :src="userInfoArr.images[1]" mode="aspectFill" @click="pictureMain(userInfoArr.images, 1)"></image>
+					<image class="img_one img_two" :src="userInfoArr.images[2]" mode="aspectFill" @click="pictureMain(userInfoArr.images, 2)">
 						<view class="imgNumber">
 							{{userInfoArr.images.length}}
 						</view>
 					</image>
 				</div>
 				<div class="" v-if="userInfoArr.images.length == 2" style='position: relative;'>
-					<image class="img_one" :src="userInfoArr.images[0]" mode="aspectFill" @click="pictureMain(userInfoArr.images)"></image>
-					<image class="img_one" :src="userInfoArr.images[1]" mode="aspectFill" @click="pictureMain(userInfoArr.images)">
+					<image class="img_one" :src="userInfoArr.images[0]" mode="aspectFill" @click="pictureMain(userInfoArr.images, 0)"></image>
+					<image class="img_one" :src="userInfoArr.images[1]" mode="aspectFill" @click="pictureMain(userInfoArr.images, 1)">
 					</image>
 				</div>
-				<div class="" v-if="userInfoArr.images.length == 1 && userInfoArr.images != ''" style='position: relative;'>
-					<image class="img_one img_three" :src="userInfoArr.images[0]" mode="aspectFill" @click="pictureMain(userInfoArr.images)">
+				<div class="" v-if="userInfoArr.images.length == 1 && userInfoArr.images != '' && userInfoArr.images[0].indexOf('cmbbs') >= 0" style='position: relative;'>
+					<image class="img_one img_three" :src="userInfoArr.images[0]" mode="aspectFill" @click="pictureMain(userInfoArr.images, 0)">
 					</image>
 				</div>
 				<div class="user_content_bottom">
@@ -138,7 +138,7 @@
 						<view class="comment_title">
 							<view class="comment_user">
 								<view class="" v-if="item.is_anonymous==0">
-									{{item.user_info[0].fullname}}
+									{{item.user_info[0].nickname || item.user_info[0].fullname}}
 								</view>
 								<view class="" v-else>
 									匿名用户
@@ -262,7 +262,6 @@
 		},
 		//下拉刷新
 		onPullDownRefresh(){
-			
 			uni.stopPullDownRefresh()
 		},
 		methods:{
@@ -291,10 +290,9 @@
 			},
 			//点击评论用户发表的评论
 			clickCommentUser(item){
-				this.valueText ="评论" + item.user_info[0].fullname
+				this.valueText ="评论" + item.user_info[0].nickname || item.user_info[0].fullname
 				this.comment_id = item.id;    //被评论人的评论信息id
 				console.log(this.comment_id,"被评论人的评论信息id");
-				
 			},
 			//点击关注
 			addfollowFun(id){
@@ -315,11 +313,11 @@
 				})
 			},
 			//点击查看更多图片
-			pictureMain(image) {
-			    pictureModule.PictureViewerMain({
-			        'listPic': image,//图片数组
-			        'position': 0, // 0 开始算  最大值为   listPic 数组数量 减一 
-					},
+			pictureMain(image, index) {
+			  pictureModule.PictureViewerMain({
+          'listPic': image,//图片数组
+          'position': index, // 0 开始算  最大值为   listPic 数组数量 减一 
+        },
 				(ret) => {
 					modal.toast({
 						message: ret,

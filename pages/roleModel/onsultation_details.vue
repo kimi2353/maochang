@@ -81,11 +81,11 @@
 					<div class="" v-if="content_img.length == 1">
 						<image class="img_one img_three" src="../../static/img/catLogo.png" mode=""></image>
 					</div> -->
-          <div class="user_content_text" v-html="article.detail">
+          <view class="user_content_text user_content_text_click" v-html="article.detail" @click.native="previewImg($event, article.detail)">
             <!-- 这里可能有循环 -->
             <!-- <text style="color:#52BCBC ;">#啊你好</text> -->
             <!-- 爱神的箭你撒娇愤怒恐惧迪斯科解放昆仑山搭街坊大家到付即可肯定是JFK地方几点开始JFK绝地反击的JFK酒店开房间客服对接打开看附件的开发接口就 -->
-          </div>
+          </view>
         </view>
       </div>
 
@@ -194,7 +194,10 @@
 </template>
 
 <script>
+var pictureModule = uni.requireNativePlugin("Wlake-PictureView")
+const modal = uni.requireNativePlugin('modal');
 import fanHui from "../../components/fanhui.vue";
+
 export default {
   components: {
     fanHui,
@@ -242,12 +245,58 @@ export default {
     }
   },
   methods: {
+    previewImg(event, item) {
+      let imgs = item.match(/<img[^>]+>/g); //把img所有节点的图片选择出来          
+      if (!imgs) {
+        return
+      }
+      var imgArr = []; //保存图片路径          //对图片进行处理从而获取路径
+      for (var j = 0; j < imgs.length; j++) {
+        imgs[j].replace(/<img[^>]*src=['"]([^'"]+)[^>]*>/gi, function(match, capture) {
+          imgArr.push(capture)
+        })
+      }
+      // 获取要点击的富文本父盒子
+      var box = document.getElementsByClassName('user_content_text_click')          //对获取的项进行循环
+      //当点击的项的下标和循环的当前项下标相等          // 通过父节点获取所有图片
+      var nodes = Array.from(box[0].querySelectorAll('img'));          // 然后通过点击的节点知道当前节点的位置了
+      console.log(nodes)
+      let xx = function(event) {
+        event.stopPropagation()
+        var target = event.target;
+        console.log(target.nodeName);
+        // 判断点击的节点是否是图片
+        if (target.nodeName !== 'IMG') {
+          box[0].removeEventListener('click', xx, false);
+        }
+        if (target.nodeName === 'IMG') {
+          let indez = nodes.indexOf(event.target)//最后进行图片预览
+          // console.log(indez)
+          // console.log(imgArr[indez])
+          pictureModule.PictureViewerMain({
+            'listPic': imgArr,//图片数组
+            'position': indez, // 0 开始算  最大值为   listPic 数组数量 减一 
+          },
+          (ret) => {
+          	modal.toast({
+          		message: ret,
+          		duration: 1.5
+          	});
+          });
+        }
+      }
+      box[0].addEventListener("click", xx)
+    },
     // 获取文章信息
     getMsg(id) {
-      this.$REQ(this.$api.article_detail, { id: id }, "POST")
+      const that = this
+      that.$REQ(that.$api.article_detail, { id: id }, "POST")
         .then((res) => {
-          console.log(res.data.data);
-          this.article = res.data.data;
+          // console.log(res.data.data);
+          that.article = res.data.data;
+          setTimeout(() => {
+            that.previewImg(null, that.article.detail)
+          }, 1000)
         })
         .catch((err) => {
           console.log(err, "err");

@@ -220,8 +220,8 @@
               <image class="img_one" :src="item.images[0]" mode="aspectFill"></image>
               <image class="img_one" :src="item.images[1]" mode="aspectFill"></image>
             </div>
-            <div class="i1" v-if="item.images.length == 1 && item.images != null &&item.images[0] != ''">
-              <image class="img_one img_three" :src="item.images[0]" mode="aspectFill" v-if="item.images[0]"></image>
+            <div class="i1" v-if="item.images.length == 1 && item.images != null &&item.images[0] != '' && item.images[0].indexOf('cmbbs') >= 0">
+              <image class="img_one img_three" :src="item.images[0]" mode="aspectFill"></image>
             </div>
             <div class="user_content_bottom">
               <div class="user_content_left">
@@ -272,7 +272,7 @@
           </view>
         </view>
       </block>
-      <!-- 显示咨询的内容 -->
+      <!-- 显示资讯的内容 -->
       <block v-if="titleNone == 4">
         <view class="catthree">
           <view class="catSquare">快速入口</view>
@@ -409,7 +409,7 @@
         <div class="popup_bottom">
           <div class="release_text">发布</div>
           <div class="release_content">
-            <div class="release_one" v-for="(item,index) in releaseArr" :key="index" @click="releaseFun(item,index)">
+            <div class="release_one" v-for="(item,index) in releaseArr" :key="index" @click="releaseFun(item, index)">
               {{item}}
             </div>
           </div>
@@ -460,8 +460,8 @@
         cat_none: true, //显示猫说的文字弹窗
         releaseArr: ['动态', '投票', "跳蚤市场"],
         content_img: [1, 2, 2], //存放猫说user发布的图片的演示数组
-        //咨询的快速入口
-        inquiry_listArr: [], //咨询文章列表
+        //资讯的快速入口
+        inquiry_listArr: [], //资讯文章列表
         dynamicInfo: [], //获取到猫说的信息存放
         dynamicInfoONE: [], //获取推荐列表
         dynamicInfoONE_number: '', //推荐的总数
@@ -802,8 +802,12 @@
           page: num,
           limit: '10'
         }, 'POST').then(res => {
-          console.log(res, '获取推荐内容')
+          console.log(res.data.data.list, '获取推荐内容11111')
           let dataInfo = res.data.data.list
+          // dataInfo.sort(function () {
+          //   return Math.random() - 0.5
+          // })
+          // console.log(console.log(dataInfo, '获取推荐内容2222'))
           this.dynamicInfoONE_number = res.data.data.total_count
           this.dynamicInfoONE = [...this.dynamicInfoONE, ...dataInfo]
           console.log(this.dynamicInfo);
@@ -823,7 +827,6 @@
       },
       //获取猫说话题动态信息
       getHotTopicInfo(num) {
-
         if (this.catsaid == 1) {
           this.$REQ(this.$api.getHotTopicInfo, {
             // topic_id:this.maoshuoCircle_id,//猫说圈子id
@@ -968,15 +971,14 @@
         }, 'POST').then(res => {
           // console.log(res,'动态信息请求成功')
           this.userinfo = res.data.data
-
         }).catch(err => {
           console.log(err, 'err')
         })
       },
-      //咨询合集
+      //资讯合集
       getArticle_type() {
         this.$REQ(this.$api.getArticle_type, {}, 'POST').then(res => {
-          // console.log(res,'咨询合集请求成功')
+          // console.log(res,'资讯合集请求成功')
           this.inquiry_listArr = res.data.data
 
         }).catch(err => {
@@ -992,7 +994,7 @@
           console.log(err, 'err')
         })
       },
-      //获取咨询相册
+      //获取资讯相册
       getAlbum() {
         this.$REQ(this.$api.getAlbum, {}, 'POST').then(res => {
           console.log(res, 'res首页猫趣圈子模块信息请求成功')
@@ -1119,13 +1121,13 @@
           url: '/pages/index/article?number=' + a + '&name=' + name
         })
       },
-      //咨询快速入口文章标题跳转
+      //资讯快速入口文章标题跳转
       articleDetails(name, id) {
         uni.navigateTo({
           url: '/pages/index/onsultation_details?number=0&id=' + id + "&name=" + name
         })
       },
-      //咨询文章标题跳转到列表信息
+      //资讯文章标题跳转到列表信息
       articleHan(item) {
         uni.setStorageSync("wenzhang", item)
         uni.navigateTo({

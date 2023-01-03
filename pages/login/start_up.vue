@@ -25,7 +25,7 @@ export default {
         uni.reLaunch({
           url: "/pages/login/login",
         });
-        uni;
+        // uni;
       } else {
         uni.reLaunch({
           url: "/pages/index/index",

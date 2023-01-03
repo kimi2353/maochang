@@ -75,14 +75,14 @@
             </swiper-item>
           </swiper>
         </view>
-        <view class="catthree">
+        <!-- <view class="catthree">
           <view class="catSquare">优秀事迹</view>
           <image
             src="../../static/img/xiayibu2.png"
             mode=""
             @click="article('优秀事迹')"
           ></image>
-        </view>
+        </view> -->
         <view class="excellent">
           <!-- 下面是循环体 -->
           <view
@@ -117,25 +117,25 @@
             </view>
           </view>
         </view>
-        <view class="catthree">
+       <!-- <view class="catthree">
           <view class="catSquare">猫厂人物</view>
         </view>
         <view class="back_content" @click="changeTotitle(3,catCharacter.id)">
           <image :src="catCharacter.photo" mode=""></image>
           <view class="back_text_two"> {{ catCharacter.level }} </view>
-        </view>
-        <view class="catthree">
+        </view> -->
+        <!-- <view class="catthree">
           <view class="catSquare">公司荣誉</view>
           <image
             src="../../static/img/xiayibu2.png"
             mode=""
             @click="article()"
           ></image>
-        </view>
-        <view class="back_content" @click="changeTotitle(4,honorExample.id)">
+        </view> -->
+        <!-- <view class="back_content" @click="changeTotitle(4,honorExample.id)">
           <image :src="honorExample.image" mode=""></image>
           <view class="back_text_two"> {{ honorExample.title }} </view>
-        </view>
+        </view> -->
       </block>
       <!-- 榜单-->
       <block v-if="curIndex == 1">

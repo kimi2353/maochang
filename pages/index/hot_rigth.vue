@@ -25,7 +25,8 @@
 		data(){
 			return{
 				hot_topic:[],
-				valueText:''
+				valueText: '',
+        value_id: ''
 			}
 		},
 		onLoad() {
@@ -33,7 +34,6 @@
 		},
 		//下拉刷新
 		onPullDownRefresh(){
-			
 			uni.stopPullDownRefresh()
 		},
 		methods:{
@@ -50,7 +50,8 @@
 				})
 			},
 			topicHan(item){
-				this.valueText =  item.title
+				this.valueText = item.title
+        this.value_id = item.id
 				this.$refs.popup.open()
 			},
 			/**
@@ -75,12 +76,12 @@
 				// TODO 做一些其他的事情，手动执行 close 才会关闭对话框
 				// ...
 				let that = this
-				uni.setStorageSync("hot_topic",this.valueText)
+				uni.setStorageSync("hot_topic", this.valueText)
+        uni.setStorageSync("hot_topic_id", this.value_id)
 				that.$refs.popup.close()
 				uni.navigateBack({
 					delta:1
 				})
-				
 			},
 			//返回上一级
 			searchFan() {

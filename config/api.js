@@ -10,6 +10,7 @@ module.exports = {
   getCircleRecommend: `${baseURL}/homepage/mao_qu/circle_recommend`, //圈子推荐
   getXilieList: `${baseURL}/homepage/index/hot_topic`, //热门话题
   getSearch: `${baseURL}/homepage/index/hot_search`, //热门搜索
+  getUserList: `${baseURL}/homepage/index/user_list`, //@用户列表
 
   getDynamicInfo: `${baseURL}/homepage/dynamic/info`, //猫说模块||猫趣圈子列表
   getHotTopicInfo: `${baseURL}/homepage/index/hot_topic_info`, //获取热门话题动态信息

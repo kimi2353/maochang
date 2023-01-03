@@ -19,7 +19,7 @@
         <view class="graphic">
           <view class="graphic_for" v-for="(i, j) in newMsg">
             <view class="newTitle">{{ i.title }}</view>
-            <img @click="pictureMain(i.image)" :src="i.image" mode="" />
+            <img @click="pictureMain(i.image, j)" :src="i.image" mode="" />
           </view>
         </view>
       </block>
@@ -34,7 +34,7 @@
 			    <view style="margin-right: 20rpx">{{
 			      i.user_info.departmentName
 			    }}</view>
-			    <view>{{ i.user_info.fullname }}</view>
+			    <view>{{ i.user_info.nicknanme || i.user_info.fullname }}</view>
 			  </view>
 			  <view class="community_text" v-html="i.detail"></view>
 			</view>
@@ -51,17 +51,17 @@
 		</view>
         <view class="first">
           <image :src="newMsg[0].avatar" mode=""></image>
-          <view class="firstName"> {{ newMsg[0].fullname }} </view>
+          <view class="firstName"> {{ newMsg[0].nicknanme || newMsg[0].fullname }} </view>
           <view class="firstJi"> {{ newMsg[0].total_score }} </view>
         </view>
         <view class="first twos">
           <image :src="newMsg[1].avatar" mode=""></image>
-          <view class="firstName"> {{ newMsg[1].fullname }} </view>
+          <view class="firstName"> {{ newMsg[1].nicknanme || newMsg[1].fullname }} </view>
           <view class="firstJi"> {{ newMsg[1].total_score }} </view>
         </view>
         <view class="threes">
           <image :src="newMsg[2].avatar" mode=""></image>
-          <view class="firstName">{{ newMsg[2].fullname }} </view>
+          <view class="firstName">{{ newMsg[2].nicknanme || newMsg[2].fullname }} </view>
           <view class="firstJi"> {{ newMsg[2].total_score }} </view>
         </view>
       </view>
@@ -82,7 +82,7 @@
           <view class="integral_image ade">
             <image class="xiamianjifentoux" :src="item.avatar" mode="aspectFill"></image>
           </view>
-          <view class="integral_name ade">{{ item.fullname }}</view>
+          <view class="integral_name ade">{{ item.nickname || item.fullname }}</view>
           <view class="integral_num ade">{{ item.total_score }}</view>
         </view>
       </view>
@@ -158,13 +158,13 @@ export default {
       });
     },
     //点击查看更多图片
-    pictureMain(image) {
+    pictureMain(image, index) {
       let imgs = [];
       imgs.push(image);
       pictureModule.PictureViewerMain(
         {
           listPic: imgs, //图片数组
-          position: 0, // 0 开始算  最大值为   listPic 数组数量 减一
+          position: index, // 0 开始算  最大值为   listPic 数组数量 减一
         },
         (ret) => {
           modal.toast({

@@ -18,7 +18,7 @@
               mode="aspectFill"
             ></image>
           </view>
-          <view class="list_text">
+          <view class="list_text" @click="hisPages(i.user_info.id)">
             <view class="list_name">{{
               i.user_info.nickname != ""
                 ? i.user_info.nickname

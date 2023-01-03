@@ -197,7 +197,7 @@ export default {
     return {
       tabbarList: [
         { id: 1, name: "动态" },
-        { id: 2, name: "咨询" },
+        { id: 2, name: "资讯" },
         { id: 3, name: "文章" },
         { id: 4, name: "视频" },
       ],

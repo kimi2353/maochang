@@ -21,7 +21,7 @@
 					<view class="comment_title">
 						<view class="comment_user">
 							<view class="">
-								{{details.user_info[0].fullname}}
+								{{ details.user_info[0].nickname || details.user_info[0].fullname}}
 							</view>
 							<view class="" style="display: flex;justify-content: right;font-size: 24rpx; color: #9B9DA9;" @click="imgNoneHan(details.id,'1','1')">
 								<!-- 点赞人数 -->
@@ -45,7 +45,7 @@
 					<view class="comment_title">
 						<view class="comment_user">
 							<view class="">
-								{{item.user_info[0].fullname}}
+								{{ item.user_info[0].nickname || item.user_info[0].fullname }}
 							</view>
 							<view class="" style="display: flex;justify-content: right;font-size: 24rpx; color: #9B9DA9;" @click="imgNoneHan(item.id,'1','1')">
 								<!-- 点赞人数 -->
